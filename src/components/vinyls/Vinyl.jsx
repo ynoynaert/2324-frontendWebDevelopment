@@ -14,7 +14,7 @@ import {
 import { Link } from "react-router-dom";
 
 export default memo(function Vinyl({
-  id,
+  plaatID : id,
   artiest,
   album,
   kleur,

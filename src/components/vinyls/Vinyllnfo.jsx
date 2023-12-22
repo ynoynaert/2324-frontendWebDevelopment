@@ -6,9 +6,18 @@ import {
   Card,
   CardBody,
   Divider,
+  Button,
 } from "@chakra-ui/react";
+import { useCallback } from "react";
 
-export default function VinylInfo({ vinyl, collection }) {
+export default function VinylInfo({ vinyl, collection, redirect, navigate }) {
+  const handleBack = useCallback(() => {
+    navigate({
+      pathname: redirect,
+      replace: true,
+    });
+  }, [redirect, navigate]);
+  
   return (
     <>
       <Card className="page-width">
@@ -34,6 +43,9 @@ export default function VinylInfo({ vinyl, collection }) {
             <Text color="blue.600" fontSize="2xl" data-cy="vinyl_detail_color">
               {vinyl.kleur}
             </Text>
+            <Button onClick={handleBack}>
+              Back
+            </Button>
           </Stack>
         </CardBody>
       </Card>

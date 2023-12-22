@@ -21,30 +21,30 @@
 
 In mijn project kan een gebruiker zijn/haar platencollectie toevoegen. Elke plaat moet in een collectie zitten. Ze kunnen nieuwe platen en collecties toevoegen én hun details aanpassen.
 
-![EERD](image-8.png)
+![EERD](images/image-8.png)
 <https://kroki.io/erd/svg/eNpNjsEKgzAQRO_zFZ4VD_2G9iL0VLAXKbLqUkM3iWQTSv--sZba28Bj3kzXKocbSjPBkWWwJSNYSPXpw9TPpDOCF1agO3oRHqPx7q9QpSxoThlfjXvJRihEwxpBMiSLh3AKWIQoNpbu3F7OqMavjHP351jPFIe6Lot9C3vc0GfnDZY9PbE=>
 
 ## Screenshots
 
-![Inloggen van een gebruiker](image-4.png)
+![Inloggen van een gebruiker](images/image-4.png)
 Dit is de inlogpagina.
 
-![Tonen van alle collecties met daarin de platen](image-2.png)
+![Tonen van alle collecties met daarin de platen](images/image-2.png)
 Op deze pagina worden alle collecties met de daarin behorende platen getoond.
 
-![Detailpagina van een plaat](image-1.png)
+![Detailpagina van een plaat](images/image-1.png)
 Dit is de detail pagina van een plaat.
 
-![Tonen van alle platen](image-3.png)
+![Tonen van alle platen](images/image-3.png)
 Alle platen die deze gebruiker bezit wordt hier getoond.
 
-![Aanpassen van een bestaande plaat](image-7.png)
+![Aanpassen van een bestaande plaat](images/image-7.png)
 Hierop wordt een bestaande plaat aangepast.
 
-![Toevoegen van een collectie](image-5.png)
+![Toevoegen van een collectie](images/image-5.png)
 Een nieuwe collectie kan ook worden toegevoegd.
 
-![Aanpassen van een bestaande gebruiker](image-6.png)
+![Aanpassen van een bestaande gebruiker](images/image-6.png)
 Een gebruiker kan zijn naam, email en wachtwoord aanpassen.
 
 ## API calls
@@ -164,7 +164,7 @@ De toevoeging en verwijdering van een collectie en plaat worden getest. Ook word
 ### Web Services
 
 In collection en vinyl worden de functies getAll, create, getByID, updateByID en deleteByID. By user worden deze dingen ook getest, maar daar wordt ook getest op register en login.
-![Alt text](image.png)
+![Coverage](images/image.png)
 
 ## Gekende bugs
 

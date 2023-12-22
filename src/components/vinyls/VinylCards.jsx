@@ -1,11 +1,10 @@
 import Vinyl from "./Vinyl";
 
 const VinylCards = ({ vinyls, onDelete }) => {
-
   return (
     <>
       {vinyls.map((vinyl) => (
-        <Vinyl key={vinyl.id} {...vinyl} onDelete={onDelete} />
+        <Vinyl key={vinyl.plaatID} {...vinyl} onDelete={onDelete} />
       ))}
     </>
   );

@@ -25,7 +25,7 @@ export default function Register({ user }) {
       let loggedIn = false;
       if (user?.id) {
         await saveUser({
-          id: user.id,
+          id: user?.id,
           name: name,
           email: email,
           password: password,
@@ -41,7 +41,7 @@ export default function Register({ user }) {
       }
       if (loggedIn) {
         navigate({
-          pathname: "/",
+          pathname: "/collection",
           replace: true,
         });
       }
@@ -72,6 +72,14 @@ export default function Register({ user }) {
       },
       password: {
         required: "Password is required",
+        minLength: {
+          value: 8,
+          message: "Password must have at least 8 characters",
+        },
+        maxLength: {
+          value: 30,
+          message: "Password must have less than 30 characters",
+        },
       },
       confirmPassword: {
         required: "Password confirmation is required",
@@ -86,6 +94,7 @@ export default function Register({ user }) {
 
   return (
     <>
+      <Error error={error || saveError} />
       <Center>
         <Heading>{user ? "Save" : "Register"} user</Heading>
       </Center>
@@ -94,20 +103,19 @@ export default function Register({ user }) {
           <form
             className="d-flex flex-column"
             onSubmit={handleSubmit(handleRegister)}
-          >
-            <Error error={error || saveError} />
+          >            
             <div className="mb-3">
               <LabelInput
                 name="name"
                 label="Name"
-                rules={validationRules.name}
+                validationRules={validationRules.name}
               />
             </div>
             <div className="mb-3">
               <LabelInput
                 name="email"
                 label="Email"
-                rules={validationRules.email}
+                validationRules={validationRules.email}
               />
             </div>
             <div className="mb-3">
@@ -115,7 +123,7 @@ export default function Register({ user }) {
                 name="password"
                 label="Password"
                 type="password"
-                rules={validationRules.password}
+                validationRules={validationRules.password}
               />
             </div>
             <div className="mb-3">
@@ -123,7 +131,7 @@ export default function Register({ user }) {
                 name="confirmPassword"
                 label="Confirm password"
                 type="password"
-                rules={validationRules.confirmPassword}
+                validationRules={validationRules.confirmPassword}
               />
             </div>
             <div className="d-flex justify-content-between">

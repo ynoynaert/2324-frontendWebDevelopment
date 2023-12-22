@@ -21,20 +21,25 @@ const CollectionList = () => {
   return (
     <>
       <AsyncData loading={isLoading} error={error || deleteError}>
-        <SimpleGrid
-          className="collectie-list"
-          columns={{ base: 1, md: 1, lg: 3 }}
-          spacing={4}
-          justifyContent="center"
-          padding="4"
-        >
+        {collecties.length === 0 ? (
+          <div className="alert alert-info">
+            There are no collections yet.
+          </div>
+        ) : (
+          <SimpleGrid
+            className="collectie-list"
+            columns={{ base: 1, md: 1, lg: 3 }}
+            spacing={4}
+            justifyContent="center"
+            padding="4"
+          >
           <CollectionCards
             filteredCollecties={collecties}
             currentUser={currentUser}
             onDelete={deleteCollection}
           />
-
-        </SimpleGrid>
+          </SimpleGrid>
+        )}
       </AsyncData>
     </>
   );
